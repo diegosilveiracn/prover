@@ -49,7 +49,11 @@ public class ProverForm extends javax.swing.JFrame implements DataPrinter {
 
 	private JMenu jMenuTheorem;
 
+	private JMenuItem deleteMenuItem;
+
 	private JSeparator jSeparator1;
+
+	private JMenuItem pasteMenuItem;
 
 	private JTextArea jTextAreaStatus;
 
@@ -67,9 +71,15 @@ public class ProverForm extends javax.swing.JFrame implements DataPrinter {
 
 	private JMenuItem jMenuItemLoadBase;
 
+	private JMenuItem copyMenuItem;
+
 	private JMenuItem exitMenuItem;
 
 	private JSeparator jSeparator2;
+
+	private JMenuItem closeFileMenuItem;
+
+	private JMenuItem saveAsMenuItem;
 
 	private JMenuItem saveMenuItem;
 
@@ -232,6 +242,10 @@ public class ProverForm extends javax.swing.JFrame implements DataPrinter {
 		this.jTextAreaStatus.append(new Character((char) b).toString());
 	}
 
+	private void cutMenuItemActionPerformed(ActionEvent evt) {
+
+	}
+
 	private void jMenuItemLoadBaseActionPerformed(ActionEvent evt) {
 		if (jTextAreaProposition.getText().length() == 0) {
 			JOptionPane.showMessageDialog(this, "There is nothing to load",
@@ -239,7 +253,7 @@ public class ProverForm extends javax.swing.JFrame implements DataPrinter {
 			return;
 		}
 
-		byte[] array = this.jTextAreaProposition.getText().trim().getBytes();
+		byte[] array = this.jTextAreaProposition.getText().getBytes();
 		final InputStream is = new ByteArrayInputStream(array);
 		new Thread() {
 			public void run() {
@@ -314,7 +328,7 @@ public class ProverForm extends javax.swing.JFrame implements DataPrinter {
 			return;
 		}
 
-		byte[] array = this.jTextAreaProposition.getText().trim().getBytes();
+		byte[] array = this.jTextAreaProposition.getText().getBytes();
 		final InputStream is = new ByteArrayInputStream(array);
 		new Thread() {
 			public void run() {
