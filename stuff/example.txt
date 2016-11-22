@@ -1,0 +1,29 @@
+BASE
+---------------
+
+formigas || abelhas -> himenopteros,
+moscas || mosquitos -> pipteros,
+besouros -> coleopteros,
+baratas || gafanhotos -> ortopteros,
+borboletas || maripousas ->lepidopteros,
+himenopteros || pipteros || coleopteros || ortopteros || lepidopteros -> insetos,
+insetos -> artropodes,
+formigas -> ~abelhas,
+moscas -> ~mosquitos,
+baratas -> ~gafanhotos,
+borboletas -> ~maripousas,
+himenopteros -> ~(pipteros || coleopteros || ortopteros || lepidopteros),
+pipteros -> ~(himenopteros || coleopteros || ortopteros || lepidopteros),
+coleopteros -> ~(himenopteros || pipteros || ortopteros || lepidopteros),
+ortopteros -> ~(himenopteros || pipteros || coleopteros || lepidopteros),
+lepidopteros -> ~(himenopteros || pipteros || coleopteros || ortopteros)
+
+
+TEOREMAS
+----------------
+
+formigas || moscas -> insetos,
+insetos -> himenopteros || pipteros || coleopteros || ortopteros || lepidopteros,
+insetos <-> himenopteros || pipteros || coleopteros || ortopteros || lepidopteros,
+(formigas -> pipteros) || (bezouros -> coleopteros), 
+(formigas -> pipteros) || (bezouros <-> coleopteros)

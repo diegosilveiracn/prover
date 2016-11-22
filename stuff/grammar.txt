@@ -1,0 +1,17 @@
+Sigma = {a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z,
+         A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z,
+	 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, +, -, =, *, /, >, <, (, ), ->, <->, &&, ||, ~, \,}
+N = {CARACTERE, LITERAL, PROP1, PROP2, PROP3, PROP4, PROP5, LISTA_PROPS}
+S = {LISTA_PROPS}
+P =	{
+	CARACTERE->a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|
+		   A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z|
+		   0|1|2|3|4|5|6|7|8|9|+|-|=|*|/|>|>=|<|<=,
+	LITERAL->CARECTERE|LITERAL.CARACTERE|~.LITERAL,
+	PROP1->LITERAL|PROP5|(.PROP5.),
+	PROP2->PROP1|PROP2.||.PROP1,
+	PROP3->PROP2|PROP3.&&.PROP2,
+	PROP4->PROP3|PROP4.<->.PROP3,
+	PROP5->PROP4|PROP5.->.PROP4,
+	LISTA_PROPS->PROP5|LISTA_PROPS.\,.PROP5
+	}

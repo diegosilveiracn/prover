@@ -1,0 +1,61 @@
+BASE
+---------------
+
+formigas || abelhas -> himenopteros,
+moscas || mosquitos -> pipteros,
+besouros -> coleopteros,
+baratas || gafanhotos -> ortopteros,
+borboletas || maripousas ->lepidopteros,
+himenopteros || pipteros || coleopteros || ortopteros || lepidopteros -> insetos,
+insetos -> artropodes,
+formigas -> ~abelhas,
+moscas -> ~mosquitos,
+baratas -> ~gafanhotos,
+borboletas -> ~maripousas,
+himenopteros -> ~(pipteros || coleopteros || ortopteros || lepidopteros),
+pipteros -> ~(himenopteros || coleopteros || ortopteros || lepidopteros),
+coleopteros -> ~(himenopteros || pipteros || ortopteros || lepidopteros),
+ortopteros -> ~(himenopteros || pipteros || coleopteros || lepidopteros),
+lepidopteros -> ~(himenopteros || pipteros || coleopteros || ortopteros)
+
+
+TEOREMAS
+----------------
+
+formigas || moscas -> insetos,
+insetos -> himenopteros || pipteros || coleopteros || ortopteros || lepidopteros,
+insetos <-> himenopteros || pipteros || coleopteros || ortopteros || lepidopteros,
+(formigas -> pipteros) || (bezouros -> coleopteros), 
+(formigas -> pipteros) || (bezouros <-> coleopteros)
+
+
+base
+b || c <-> a,
+b -> ~c
+
+teoremas
+a -> b || c,
+a <-> b || c
+
+
+e || f || g -> b, h || i || j -> c, l || m || n -> d, b || c || d -> a,
+e -> ~(f || g), f -> ~(e || g), g -> ~(e || f),
+h -> ~(i || g), i -> ~(h || j), j -> ~(h || i),
+l -> ~(m || n), m -> ~(l || n), n -> ~(l || m),
+b -> ~(c || d), c -> ~(b || d), d -> ~(b || c),
+a -> b || c || d, b -> e || f || g, c -> h || i || j, d -> l || m || n
+
+
+
+d || e <-> b,
+f || g <-> c,
+b || c <->a,
+e -> ~d,
+f -> ~g,
+b -> ~c
+
+
+b || c || d <-> a,
+b -> ~(c || d),
+c -> ~(b || d),
+d -> ~(b || c)
